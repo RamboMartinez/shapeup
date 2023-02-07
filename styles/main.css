@@ -1,0 +1,33 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+header h2 {
+    font-size: 250%;
+    font-style: italic;
+    color: steelblue;
+}
+
+header img {
+    float: left;
+}
+
+
+main {
+    clear: both;
+}
+
+main a {
+    color: red;
+}
+
+main ul a {
+    color: steelblue;
+}
+
+
+footer {
+    font-size: 75%;
+    text-align: center;
+}
