@@ -1,142 +1,80 @@
+/* =========== UNIVERSAL SELECTOR =========== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+/* =========== SHADOW TEXT ================= */
+.shadow {
+    text-shadow: 1px 1px 15px maroon;
+    font-variant: small-caps;
+    font-weight: bolder;
 }
 
+/*=======================================================
 
-html {
-    background-color: lightsteelblue;
-    background-image: url(../images/bgtile.jpg);
-    
-}
+                   ROOT ELEMENTS
+
+=======================================================*/
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 100%;
-    max-width: 1200px;
     width: 100%;
-    border: 3px solid steelblue;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 25px;
-    box-shadow: 5px 5px 20px 10px black;
 }
 
+/*=======================================================
 
-/* ==============================
+                      HEADER
 
-        Header
-
-===============================*/
-
+=======================================================*/
 header {
     border-bottom: 3px solid steelblue;
     background-image: linear-gradient(white, lightsteelblue);
-    background-image: linear-gradient(steelblue, white, lightsteelblue);
+    border-radius: 10px 10px 0 0;
+    display: flex;
 }
-
+header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
 header h2 {
     font-size: 250%;
     font-style: italic;
     color: steelblue;
-    text-shadow: 3px 3px 7px steelblue ;
-}
-header h2, header h3 {
-    padding-left: 2em;
-}
-
-h1, h2, h3, h4 {
-    margin: .75em 1em;
-}
-
-p {
-    margin: .75em;
-}
-
-a {
-    margin: 0.5em;
+    text-shadow: 3px 3px 12px steelblue;
+    
 }
 
 header img {
-    float: left;
-    border: 2px red;
-    margin:0 .75em;
     max-width: 140px;
     min-width: 70px;
     width: 100%;
 }
 
-/******************************
+/*=======================================================
 
-        Navigation Menu
+             NAVIGATION MENU - #nav_menu
 
-#nav_menu {
-    margin: 0;
-}
-#nav_menu ul {
-    list-style-type: none;
-    text-align: center;
-    border-bottom: 3px solid steelblue;
-    background-color: lightsteelblue;
-    padding: 10px 0;
-    margin-top: 0;
-}
-
-#nav_menu ul li {
-    display: inline;
-    border-right: 2px solid black;
-    padding: 10px 3em;
-
-}
-
-#nav_menu #last {
-    border-right: none;
-}
-
-#nav_menu ul li a{
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-
-#nav_menu ul li a:hover {
-    color: red;
-    text-decoration: underline;
-}
-
-#nav_menu ul ul {
-    display: none;
-}
-
-*******************************/
-
+=======================================================*/
 #nav_menu {
     border-bottom: 3px solid steelblue;
+    background-color: steelblue;
+    
 }
-
 #nav_menu ul {
     list-style-type: none;
     position: relative;
-    padding: 0;
-    margin: 0;
+    display: flex;
 }
-
 #nav_menu ul li {
-    float: left;
     width: 20%;
 }
-
 #nav_menu ul li a {
-    display: block;
     text-align: center;
+    display: block;
     padding: .7em 0;
     background-color: steelblue;
     font-weight: bold;
@@ -150,46 +88,35 @@ header img {
     top: 100%;
     width: 100%;
 }
-
-#nav_menu ul ul li {
-    float: none;
+#nav_menu ul ul li a {
+    text-align: left;
+    padding-left: 12px;
 }
-
 #nav_menu ul li:hover > ul {
     display: block;
 }
-
-#nav_menu > ul::after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
 #nav_menu a:hover {
     color: black;
     background-color: lightsteelblue;
 }
-/* ==============================
 
-        Navigation List - using display inline
+/* ==================================================
 
-===============================*/
+       LEFT ASIDE NAVIGATION LIST - #nav_list
 
-#nav_list h2 {
- margin: 5px;
- text-align: center;
-}
-
+===================================================*/             
 #nav_list ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5vh;
 }
-
-#nav_list ul li {
+#nav_list li {
     width: 90%;
-    margin: 0 auto .5em;
+    border: 1px solid steelblue;
+    border-radius: 5px;
 }
-
-#nav_list ul li a {
+#nav_list a {
     display: block;
     font-weight: bold;
     text-decoration: none;
@@ -197,143 +124,159 @@ header img {
     padding: .5em;
     color: black;
 }
-
-#nav_list ul li a:hover {
+#nav_list a:hover {
     background-color: steelblue;
     color: white;
 }
 
-/* ==============================
+/*===============================================
 
-        Main
+                MAIN ELEMENTS
 
-===============================*/
+===============================================*/
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: steelblue;
+}
+a:hover, a:focus {
+    color: maroon;
+    text-decoration: underline;
+}
 
 main {
-    clear: both;
-    padding-right: .25em;
-}
-
-/*section link colors */
-section a:link, section a:visited {
-    color: maroon;
-}
-
-section a:hover, section a:focus {
-    color: steelblue;
-}
-
-/*aside link color*/
-
-aside a:link, aside a:visited{
-    color: steelblue;
-}
-
-aside a:hover, aside a:focus{
-    color: maroon;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
 }
 
 section {
-    float: left;
-    width: 50%;
-    padding: 0 .3em;
+    flex: 0 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }
-
+section h1 {
+    margin: 0;
+}
+section h3, section h4 {
+    margin-top: 2vh;
+}
 aside {
-    float: left;
-    width: 25%;
+    flex: 0 1 250px;
 }
-
 #rightcol {
-    float: right;
-    width: 25%;
-    border-left: 3px solid steelblue;
-    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    background-color: beige;
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 15px 2px black;
 }
-
 aside h3 {
-    padding-top: 50px;
     color: maroon;
-    font-size: 120%;
-}
-
-aside li {
-    line-height: 1.5em;
+    font-size: 110%;
 }
 
 blockquote {
     width: 80%;
-    margin-left: 10%; 
-    border-left: 10px solid lightcyan;
+    margin: 1vh auto;
+    padding: 10px;
+    border-left: 25px solid steelblue;
+    border-top: 3px solid steelblue;
+    border-bottom: 3px solid steelblue;
+    border-right: 3px solid steelblue   ;
+    background-color: lightsteelblue;
+    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 120%;
+    font-style: italic;
 }
-
-/* ==============================
-
-        Footer
-
-===============================*/
-
-footer{
-    clear: both;
+blockquote:hover {
     background-color: steelblue;
-    height: 100px;
-    text-align: center;
-    border-radius: 0 0 25px 25px;
+    color: white;
 }
 
-footer p{
+/*==================================================
+
+                       FOOTER
+
+==================================================*/                       
+footer {
+    background-color: steelblue;
+    padding: 15px 0;
+    border-radius: 0 0 7px 7px;
+}
+footer p {
     font-size: 75%;
     text-align: center;
+    font-variant: small-caps;
     color: white;
-    margin-top: 50px;
-    
 }
 
 #mobilemenu {
     display: none;
 }
 
+/*=============================================================
 
+                  MEDIA QUERIES
 
-/*===============================
-
-        Media Queries
-
-================================*/
-
+=============================================================*/
 @media only screen and (max-width: 900px) {
     body {
-        box-shadow: none;
-        border: none;
-        font-size: 90%;
+         font-size: 90%;
     }
+    main {
+        flex-wrap: wrap;
+    }
+    section {
+        flex: 0 1 55%;
+        justify-content: center;
+    }
+    #leftcol {
+        order: 3;
+        flex: 0 1 80%;
+        justify-content: center;
+        margin: 2vh 0;
+    }
+    #rightcol {
+        flex: 0 1 30%;
+    }
+    header, footer {
+        border-radius: 0;
+    }
+
 }
 
 @media only screen and (max-width: 767px) {
-    #nav_menu {
-        display: none;
-    }
-
-    #mobilemenu {
-        display: block;
-    }
-
-    .slicknav_menu {
-        background-color: steelblue;
-    }
-
-    #leftcol {
-        display: none;
-    }
-
-    section, aside, #rightcol {
-        float: none;
-        width: 95%;
-        margin: 10px auto;
+    section, #rightcol {
+        flex: 0 1 95%;
     }
 }
 
 @media only screen and (max-width: 479px) {
-    
-}
+    #nav_menu ul {
+        flex-direction: column;
 
+    }
+    #nav_menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+    #nav_menu ul li:first-of-type {
+        display: none;
+    }
+    #rightcol {
+        flex: 0 1 100%;
+        margin: 2vh 0;
+        padding: 2vw;
+        border: none;
+        border-radius: 0%;
+    }
+}
